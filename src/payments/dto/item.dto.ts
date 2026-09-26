@@ -1,5 +1,4 @@
-// item.dto.ts
-import { IsString, IsPositive, IsNumber, IsIn } from 'class-validator';
+import { IsString, IsPositive, IsNumber, IsInt } from 'class-validator';
 
 export class ItemDto {
   @IsString()
@@ -10,5 +9,7 @@ export class ItemDto {
   price: number;
 
   @IsPositive()
+  @IsInt()
   quantity: number;
 }
+

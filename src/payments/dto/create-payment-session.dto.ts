@@ -1,10 +1,11 @@
 // create-payment-session.dto.ts
-import { IsString, IsArray, ValidateNested, ArrayMinSize } from 'class-validator';
+import { IsString, IsArray, ValidateNested, ArrayMinSize, IsNotEmpty } from 'class-validator';
 import { Type } from 'class-transformer';
 import { ItemDto } from './item.dto';
 
 export class CreatePaymentSessionDto {
   @IsString()
+  @IsNotEmpty()
   orderId: string;
 
   @IsString()
